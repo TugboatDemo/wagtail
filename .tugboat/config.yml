@@ -20,7 +20,7 @@ services:
         
       start:
         # Run on the default Tugboat port. 
-        - cd mysite && python3 manage.py runserver 0.0.0.0:80 &
+        # cd mysite && python3 manage.py runserver 0.0.0.0:80 &
 
 # Optionally install a redis cache.
   redis:
