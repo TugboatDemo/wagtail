@@ -1,6 +1,6 @@
 # Live Previews for Wagtail CMS
 
-This starter config is used to get up and running on [Tugboat CI](https://tugboat.ci/).
+This starter config is used to get [Wagtail](https://wagtail.io/) up and running on [Tugboat CI](https://tugboat.ci/).
 
 Place `.tugboat/config.yml` in the root of your Git repository and create an account on Tugboat. 
 
