@@ -16,5 +16,5 @@ services:
         - apt-get clean
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
         
-      # start:
-        # cd mysite && python3 manage.py runserver ${TUGBOAT_DEFAULT_SERVICE_URL}:80 &
+      start:
+        - cd mysite && python3 manage.py runserver ${TUGBOAT_DEFAULT_SERVICE_URL}:443 &
