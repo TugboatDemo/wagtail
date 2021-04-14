@@ -1,6 +1,6 @@
 services:
   python:
-    image: tugboatqa/alpine
+    image: tugboatqa/debian
     commands:
       init: 
         - apt-get update
