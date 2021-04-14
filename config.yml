@@ -1,0 +1,6 @@
+services:
+  python:
+    image: tugboatqa/alpine
+    commands:
+      init: 
+        - apt-get update
