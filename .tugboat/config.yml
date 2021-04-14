@@ -17,4 +17,4 @@ services:
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
         
       start:
-        - cd mysite && python3 manage.py runserver ${TUGBOAT_DEFAULT_SERVICE_URL}:443 &
+        - cd mysite && python3 manage.py runserver ${TUGBOAT_DEFAULT_SERVICE_URL} &
