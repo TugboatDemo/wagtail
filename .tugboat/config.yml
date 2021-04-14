@@ -10,11 +10,21 @@ services:
         - wagtail start mysite mysite
         - cd mysite && pip3 install -r requirements.txt
         - cd mysite && python3 manage.py migrate
-        # Need help here since this is an interactive command. NOT python manage.py createsuperuser
+        # Create the admin user. The password could also be 
+        # stored as a Tugboat environment variable.
         - cd mysite && echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'root@localhost', 'tugboat')" | python3 manage.py shell
-        # Cleanup
+        # Cleanup to reduce disk space
         - apt-get clean
         - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
         
       start:
+        # Run on the default Tugboat port. 
         - cd mysite && python3 manage.py runserver 0.0.0.0:80 &
+
+# Optionally install a redis cache.
+services:
+  redis:
+    image: tugboatqa/redis
+    commands:
+      init: 
+        - apt-get update && apt-get install django-redis
