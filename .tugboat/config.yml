@@ -9,9 +9,9 @@ services:
         - pip3 install wagtail
         - wagtail start mysite mysite
         - cd mysite && pip3 install -r requirements.txt
-        - python manage.py migrate
+        - python3 manage.py migrate
         # Need help here since this is an interactive command. NOT python manage.py createsuperuser
-        - echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'root@localhost', 'tugboat')" | python manage.py shell
+        - echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'root@localhost', 'tugboat')" | python3 manage.py shell
         
       start:
-        - python manage.py runserver 80
+        - python3 manage.py runserver 80
