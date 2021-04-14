@@ -1,6 +1,8 @@
 services:
+  # Set the hostname
   python:
     image: tugboatqa/debian
+    # In case multiple services are installed.
     default: true
     commands:
       init: 
@@ -23,8 +25,9 @@ services:
         - cd mysite && python3 manage.py runserver 0.0.0.0:80 &
 
 # Optionally install a redis cache.
-  redis:
-    image: tugboatqa/redis
-    commands:
-      init: 
-        - apt-get update
+#  redis:
+#    image: tugboatqa/redis
+
+# Optionally install Elasticsearch.
+#  elasticsearch:
+#    image: tugboatqa/elasticsearch
