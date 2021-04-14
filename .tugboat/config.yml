@@ -1,6 +1,7 @@
 services:
   python:
     image: tugboatqa/debian
+    default: true
     commands:
       init: 
         - apt-get update && apt-get install python3 python3-pip python3-venv
