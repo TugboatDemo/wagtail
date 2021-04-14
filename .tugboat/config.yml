@@ -12,6 +12,9 @@ services:
         - cd mysite && python3 manage.py migrate
         # Need help here since this is an interactive command. NOT python manage.py createsuperuser
         - cd mysite && echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'root@localhost', 'tugboat')" | python3 manage.py shell
+        # Cleanup
+        - apt-get clean
+        - rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
         
-      start:
-        - cd mysite && python3 manage.py runserver 80 &
+      # start:
+        # cd mysite && python3 manage.py runserver ${TUGBOAT_DEFAULT_SERVICE_URL}:80 &
