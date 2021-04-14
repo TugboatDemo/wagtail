@@ -22,7 +22,6 @@ services:
         - cd mysite && python3 manage.py runserver 0.0.0.0:80 &
 
 # Optionally install a redis cache.
-services:
   redis:
     image: tugboatqa/redis
     commands:
